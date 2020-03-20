@@ -95,10 +95,7 @@ public class PipelineExpressionFunctionProvider implements ExpressionFunctionPro
               true);
 
       if (pipeline == null) {
-        throw new SpelHelperFunctionException(
-            format(
-                "Pipeline with name '%s' could not be found on application %s",
-                pipelineName, currentApplication));
+        return null;
       }
 
       return (String) pipeline.get("id");
